@@ -6,7 +6,7 @@
 # catalog-version r33
 Name:		texlive-pfarrei
 Version:	r33
-Release:	1
+Release:	1.1
 Summary:	LaTeX support of pastors' and priests' work
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/pfarrei
@@ -18,7 +18,9 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Requires:	texlive-pfarrei.bin
+# FIXME temporary to not break depes
+Provides:	texlive-pfarrei.bin
+#Requires:	texlive-pfarrei.bin
 
 %description
 In "Die TeXnische Komodie" (issue 1/2013) Christian Justen
