@@ -6,7 +6,7 @@
 # catalog-version r33
 Name:		texlive-pfarrei
 Version:	r33
-Release:	1.1
+Release:	2
 Summary:	LaTeX support of pastors' and priests' work
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/pfarrei
@@ -18,9 +18,7 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-# FIXME temporary to not break depes
-Provides:	texlive-pfarrei.bin
-#Requires:	texlive-pfarrei.bin
+Provides:	texlive-pfarrei.bin = %{EVRD}
 
 %description
 In "Die TeXnische Komodie" (issue 1/2013) Christian Justen
@@ -43,6 +41,8 @@ installation.).
 
 #-----------------------------------------------------------------------
 %files
+%{_bindir}/a5toa4
+%{_bindir}/pfarrei
 %{_texmfdistdir}/scripts/pfarrei/a5toa4.tlu
 %{_texmfdistdir}/scripts/pfarrei/pfarrei.tlu
 %{_texmfdistdir}/tex/latex/pfarrei/a5toa4.tex
@@ -59,5 +59,10 @@ installation.).
 %build
 
 %install
+mkdir -p %{buildroot}%{_bindir}
+pushd %{buildroot}%{_bindir}
+    ln -sf %{_texmfdistdir}/scripts/pfarrei/a5toa4.tlu a5toa4
+    ln -sf %{_texmfdistdir}/scripts/pfarrei/pfarrei.tlu pfarrei
+popd
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
