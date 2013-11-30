@@ -1,12 +1,12 @@
-# revision 29796
+# revision 31934
 # category Package
 # catalog-ctan /macros/latex/contrib/pfarrei
-# catalog-date 2013-04-08 18:29:05 +0200
+# catalog-date 2013-10-17 11:02:38 +0200
 # catalog-license lppl1.3
-# catalog-version r33
+# catalog-version r36
 Name:		texlive-pfarrei
-Version:	r33
-Release:	2
+Version:	r36
+Release:	1
 Summary:	LaTeX support of pastors' and priests' work
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/pfarrei
