@@ -6,7 +6,7 @@
 # catalog-version r36
 Name:		texlive-pfarrei
 Version:	r36
-Release:	6
+Release:	7
 Summary:	LaTeX support of pastors' and priests' work
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/pfarrei
