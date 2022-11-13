@@ -1,19 +1,13 @@
-# revision 31934
-# category Package
-# catalog-ctan /macros/latex/contrib/pfarrei
-# catalog-date 2013-10-17 11:02:38 +0200
-# catalog-license lppl1.3
-# catalog-version r36
 Name:		texlive-pfarrei
-Version:	r36
-Release:	10
+Version:	31934
+Release:	1
 Summary:	LaTeX support of pastors' and priests' work
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/pfarrei
 License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pfarrei.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pfarrei.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pfarrei.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pfarrei.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pfarrei.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pfarrei.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -32,12 +26,12 @@ a5toa4.tlu should have execute permissions in any
 installation.).
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -54,15 +48,16 @@ installation.).
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_bindir}
 pushd %{buildroot}%{_bindir}
-    ln -sf %{_texmfdistdir}/scripts/pfarrei/a5toa4.tlu a5toa4
-    ln -sf %{_texmfdistdir}/scripts/pfarrei/pfarrei.tlu pfarrei
+ln -sf %{_texmfdistdir}/scripts/pfarrei/a5toa4.tlu a5toa4
+ln -sf %{_texmfdistdir}/scripts/pfarrei/pfarrei.tlu pfarrei
 popd
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
