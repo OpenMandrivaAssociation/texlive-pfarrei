@@ -1,6 +1,6 @@
 Name:		texlive-pfarrei
 Version:	31934
-Release:	1
+Release:	2
 Summary:	LaTeX support of pastors' and priests' work
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/pfarrei
