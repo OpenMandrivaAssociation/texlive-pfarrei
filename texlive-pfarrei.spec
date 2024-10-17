@@ -3,7 +3,7 @@ Version:	31934
 Release:	2
 Summary:	LaTeX support of pastors' and priests' work
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/pfarrei
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/pfarrei
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pfarrei.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pfarrei.doc.r%{version}.tar.xz
