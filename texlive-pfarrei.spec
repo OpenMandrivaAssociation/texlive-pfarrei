@@ -1,5 +1,6 @@
 %global tl_name pfarrei
 %global tl_revision 68950
+%global tl_bin_links a5toa4:%{_texmfdistdir}/scripts/pfarrei/a5toa4.tlu pfarrei:%{_texmfdistdir}/scripts/pfarrei/pfarrei.tlu
 
 Name:		texlive-%{tl_name}
 Epoch:		1
@@ -16,6 +17,8 @@ BuildArch:	noarch
 BuildSystem:	texlive
 Requires:	texlive(pfarrei.bin)
 Provides:	texlive(%{tl_name}) = %{tl_revision}
+Provides:	texlive(%{tl_name}.bin) = %{tl_revision}
+Provides:	texlive-%{tl_name}.bin = %{EVRD}
 
 %description
 In "Die TeXnische Komodie" (issue 1/2013) Christian Justen described his
